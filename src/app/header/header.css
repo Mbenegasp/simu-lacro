@@ -1,0 +1,9 @@
+:host {
+    position: fixed;
+    
+    
+}
+
+a.active {
+    color: var(--accent-color);
+}
