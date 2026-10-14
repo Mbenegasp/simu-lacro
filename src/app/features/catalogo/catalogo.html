@@ -4,7 +4,7 @@
     @for (pantalon of pantalones(); track pantalon.id){
        <li>
           {{pantalon.modelName}} | Talle {{pantalon.size}} | {{pantalon.salePrice}}
-          <button type="button" click="verDetalle(pantalon.id)"> ver mas &rarr;</button>  
+          <button type="button" class="details-button" (click)="verDetalle(pantalon.id)"> ver mas &rarr;</button>  
         </li>
     }
 </ul>

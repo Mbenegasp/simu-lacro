@@ -16,12 +16,12 @@ export const routes: Routes = [
         .then(m => m.AgregarPantalones)
     },
     {
-        path: 'detalle:id',
+        path: 'detalle/:id',
         loadComponent: () => import('./features/detalle-pantalones/detalle-pantalones')
         .then(m => m.DetallePantalones)
     },
     {
         path: '**',
-        redirectTo: ''
+        redirectTo: '/catalogo'
     }
 ];

@@ -9,7 +9,7 @@ export class PantalonService {
   private readonly http = inject(HttpClient);
   private readonly url = 'http://localhost:3000/trousers';
   
-  getAll() {
+  getAll(){
     return this.http.get<Pantalon[]>(this.url);
   }
 

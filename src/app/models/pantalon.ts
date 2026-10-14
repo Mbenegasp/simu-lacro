@@ -5,11 +5,20 @@ export const CUTS = ['Recto', 'Slim', 'Jogger', 'Cargo', 'Skinny'] as const;
 export type Cut = (typeof CUTS)[number];
 
 export interface Pantalon {
-  id?: string;
+  id: string;
   modelName: string;
   salePrice: number;
   isInStore: boolean;
   size: Size;
   cut: Cut;
-  notes?: string;
+  notes: string;
+}
+
+export interface PantalonFormulario {
+  modelName: string;
+  salePrice: number;
+  isInStore: boolean;
+  size: Size;
+  cut: Cut;
+  notes: string;
 }
