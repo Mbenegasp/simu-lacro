@@ -1,7 +1,9 @@
     <form [formGroup]="form" (ngSubmit)="submit()">
         
         <div>
-            <h2>Agregando Pantalones</h2>
+            <h2>
+                {{ pantalon() ? 'Editar Pantalon' : 'Agregar Pantalon'}}
+            </h2>
             
             <label for="modelName">Modelo</label>
             @if (form.controls.modelName.touched && form.controls.modelName.hasError('required')){

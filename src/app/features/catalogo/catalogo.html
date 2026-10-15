@@ -1,10 +1,14 @@
 <h1>Catalogo</h1>
 
 <ul>
-    @for (pantalon of pantalones(); track pantalon.id){
-       <li>
-          {{pantalon.modelName}} | Talle {{pantalon.size}} | {{pantalon.salePrice}}
-          <button type="button" class="details-button" (click)="verDetalle(pantalon.id)"> ver mas &rarr;</button>  
-        </li>
-    }
+  @for (pantalon of pantalones(); track pantalon.id) {
+    <li>
+      <div class="fila">
+        <span>{{ pantalon.modelName }} | Talle {{ pantalon.size }} | {{ pantalon.salePrice }}</span>
+        <button type="button" class="details-button" (click)="verDetalle(pantalon.id)">
+          ver mas &rarr;
+        </button>
+      </div>
+    </li>
+  }
 </ul>

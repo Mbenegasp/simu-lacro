@@ -2,12 +2,12 @@
   "trousers": [
     {
       "id": "1p21",
-      "modelName": "Pantalón Chino Delgado",
+      "modelName": "Pantalón Chino Obeso",
       "salePrice": 55.5,
       "isInStore": true,
       "size": "M",
       "cut": "Slim",
-      "notes": "Ideal para oficina o eventos casuales. Disponible en varios colores."
+      "notes": "Ideal para oficina o eventos casuales y super formales. Disponible en varios colores."
     },
     {
       "id": "k03u",
@@ -53,6 +53,15 @@
       "size": "S",
       "notes": "muy facherito cha cha",
       "id": "kPhyNiO3xxQ"
+    },
+    {
+      "modelName": "Pantalonazo saso",
+      "salePrice": 15,
+      "isInStore": true,
+      "cut": "Oxford",
+      "size": "XL",
+      "notes": "si no levantas con este lompa so un virgen",
+      "id": "Sb-fjKxjQe0"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

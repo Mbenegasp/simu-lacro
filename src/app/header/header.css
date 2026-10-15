@@ -1,9 +1,28 @@
 :host {
-    position: fixed;
-    
-    
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--background-darker-color);
+  border-bottom: 1px solid var(--font-color);
+}
+
+.navigation {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+a{
+    background-color: var(--background-lighter-color);
+    text-decoration: var(--font-color);
+    border: 1px solid var(--font-color);
+    border-radius: 8px;
+    padding: 4px;
 }
 
 a.active {
-    color: var(--accent-color);
+    color: var(--accent-color);   
 }

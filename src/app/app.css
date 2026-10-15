@@ -1,0 +1,11 @@
+.main-content{
+    background-color: var(--background-color);
+}
+
+footer{
+    background-color: var(--background-darker-color);
+    border-top: 1px solid var(--font-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

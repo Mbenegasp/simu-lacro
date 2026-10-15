@@ -21,7 +21,7 @@ export class PantalonService {
     return this.http.post<Pantalon>(this.url, pantalon);
   }
 
-  update(pantalon: Pantalon, id: string | number){
+  update(pantalon: PantalonFormulario, id: string | number){
     return this.http.patch<Pantalon>(`${this.url}/${id}`, pantalon);
   }
 

@@ -1,6 +1,6 @@
-import { Component, inject, output } from '@angular/core';
+import { Component, inject, output, input, } from '@angular/core';
 import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Cut, Size, CUTS, SIZES, PantalonFormulario } from '../../models/pantalon';
+import { Cut, Size, CUTS, SIZES, PantalonFormulario, Pantalon } from '../../models/pantalon';
 @Component({
   selector: 'app-formulario',
   imports: [ReactiveFormsModule],
@@ -12,7 +12,7 @@ export class Formulario {
 
   protected readonly form = this.fb.group({
     modelName: ['', Validators.required],
-    salePrice: [0, [Validators.required, Validators.min(1)]],
+    salePrice: [0, [Validators.required, Validators.min(0)]],
     isInStore: [false],
     cut: this.fb.control<Cut | ''>('', Validators.required),
     size: this.fb.control<Size | ''>('', Validators.required),
@@ -23,6 +23,14 @@ export class Formulario {
   protected readonly cuts = CUTS
 
   readonly submitted = output<PantalonFormulario>();
+  readonly pantalon = input<Pantalon>();
+
+  ngOnInit() {
+    const p = this.pantalon();
+    if (p){
+      this.form.patchValue(p)
+    }
+  }
   
   submit(){
     if (this.form.invalid) return;

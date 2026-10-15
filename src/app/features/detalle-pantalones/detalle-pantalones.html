@@ -1,19 +1,21 @@
-@if (pantalon(); as p){
-    <article>
-        <h2>{{ p.modelName }}</h2>
-        <p>Talle {{ p.size}} | Corte {{p.cut}}</p>
-        <p>Precio de venta: ${{ p.salePrice }}</p>
-        @if (p.isInStore){
-            <p>Disponible en tienda</p>
-        } @else {
-            <p>No disponible en tienda</p>
-        }
-        @if (p.notes) {
-            <h3>Observaciones</h3>
-            <p>{{ p.notes }}</p>
-        }
-        <button type="button">Editar</button>
-        <button type="button" (click)="borrarPantalon()">Borrar</button>
-    </article>
-    
+@if (pantalon(); as p) {
+  <article>
+    <h2>{{ p.modelName }}</h2>
+    <p>Talle {{ p.size }} | Corte {{ p.cut }}</p>
+    <p>Precio de venta: ${{ p.salePrice }}</p>
+    @if (p.isInStore) {
+      <p>Disponible en tienda</p>
+    } @else {
+      <p>No disponible en tienda</p>
+    }
+    @if (p.notes) {
+      <h3>Observaciones</h3>
+      <p>{{ p.notes }}</p>
+    }
+    <button type="button" (click)="toggleEditing()">Editar</button>
+    <button type="button" [disabled]="isEditing()" (click)="borrarPantalon()">Borrar</button>
+</article>
+@if (isEditing()) {
+  <app-formulario [pantalon]="p" (submitted)="guardarPantalonEditado($event)" />
+}
 }

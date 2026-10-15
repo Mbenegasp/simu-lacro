@@ -1,0 +1,16 @@
+ul{
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+li{
+    border-bottom: 2px solid black;
+    padding: 0.4rem 0
+}
+
+.fila{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}

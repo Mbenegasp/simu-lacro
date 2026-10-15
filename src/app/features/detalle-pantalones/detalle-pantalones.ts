@@ -1,11 +1,12 @@
 import { Component, signal, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PantalonService } from '../../services/pantalon-service';
-import { Pantalon } from '../../models/pantalon';
+import { Pantalon, PantalonFormulario } from '../../models/pantalon';
+import { Formulario } from '../formulario/formulario';
 
 @Component({
   selector: 'app-detalle-pantalones',
-  imports: [],
+  imports: [Formulario],
   templateUrl: './detalle-pantalones.html',
   styleUrl: './detalle-pantalones.css',
 })
@@ -16,6 +17,7 @@ export class DetallePantalones {
 
   private readonly id = this.route.snapshot.paramMap.get('id')!;
   protected readonly pantalon = signal<Pantalon | undefined>(undefined);
+  protected readonly isEditing = signal(false);
 
   ngOnInit() {
     this.pantalonService.getById(this.id).subscribe({
@@ -40,5 +42,22 @@ export class DetallePantalones {
         this.router.navigate(['/']);
       },
     });
+  }
+
+  guardarPantalonEditado(pantalonEditado : PantalonFormulario) {
+    if(!confirm('desea actualizar los datos')) return;
+    this.pantalonService.update(pantalonEditado, this.id).subscribe({
+      next: (rta) => {
+        this.pantalon.set(rta);
+        this.isEditing.set(false);
+      },
+      error: () => {
+        alert('Hubo un error con la conexion al servidor');
+      }
+    });
+  }
+
+  toggleEditing() {
+    this.isEditing.update(v => !v);
   }
 }
