@@ -1,0 +1,52 @@
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        
+        <div>
+            <h2>Agregando Pantalones</h2>
+            
+            <label for="modelName">Modelo</label>
+            @if (form.controls.modelName.touched && form.controls.modelName.hasError('required')){
+                <span>El modelo es requerido</span>
+            }
+            <input id="modelName" type="text" formControlName="modelName">
+
+            <label for="salePrice">Precio de Venta</label>
+            @if (form.controls.salePrice.touched && form.controls.salePrice.hasError('min')){
+                <span>El precio debe ser mayor a 0</span>
+            }
+            @if (form.controls.salePrice.touched && form.controls.salePrice.hasError('required')){
+                <span>El precio es requerido</span>
+            }
+            <input id="salePrice" type="number" formControlName="salePrice">
+
+            <label for="isInStore">Disponible en tienda</label>
+            <input id="isInStore" type="checkbox" formControlName="isInStore">
+
+            <p>Talle</p>
+            @for (size of sizes; track size){
+            <label>
+                {{ size }}
+                <input type="radio" formControlName="size" [value]="size">
+            </label>
+            }
+            @if (form.controls.size.touched && form.controls.size.hasError('required')){
+                <span>El talle es requerido</span>
+            }
+            
+            <label for="cut">Corte</label>
+            <select id="cut" formControlName="cut">
+                <option value="">Seleccione el corte</option>
+                @for (cut of cuts; track cut) {
+                    <option [value]="cut">{{ cut }}</option>
+                }
+            </select>
+            @if (form.controls.cut.touched && form.controls.cut.hasError('required')) {
+                <span>El corte es requerido</span>
+            }
+
+            <textarea formControlName="notes" placeholder="notas..."></textarea>
+
+            <button type="button" (click)="clean()">Borrar</button>
+            <button type="submit" [disabled]="form.invalid">Enviar</button>
+        </div>
+
+    </form>

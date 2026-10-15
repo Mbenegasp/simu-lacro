@@ -15,7 +15,7 @@ export interface Pantalon {
 }
 
 export interface PantalonFormulario {
-  modelName: string | number;
+  modelName: string;
   salePrice: number;
   isInStore: boolean;
   size: Size;

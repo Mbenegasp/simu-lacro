@@ -1,15 +1,6 @@
 {
   "trousers": [
     {
-      "id": "1r1g",
-      "modelName": "Jeans Clásico 501",
-      "salePrice": 79.99,
-      "isInStore": true,
-      "size": "XS",
-      "cut": "Recto",
-      "notes": "Tela denim pesada, 100% algodón. Clásico atemporal."
-    },
-    {
       "id": "1p21",
       "modelName": "Pantalón Chino Delgado",
       "salePrice": 55.5,
@@ -19,22 +10,22 @@
       "notes": "Ideal para oficina o eventos casuales. Disponible en varios colores."
     },
     {
+      "id": "k03u",
       "modelName": "Jogger Deportivo",
       "salePrice": 45,
       "isInStore": false,
       "size": "L",
       "cut": "Jogger",
-      "notes": "Material sintético con tecnología de secado rápido. Agotado en color negro, solo queda en gris.",
-      "id": "k03u"
+      "notes": "Material sintético con tecnología de secado rápido. Agotado en color negro, solo queda en gris."
     },
     {
+      "id": "j84s",
       "modelName": "Pantalón Cargo Urbano",
       "salePrice": 65,
       "isInStore": true,
       "size": "XL",
       "cut": "Cargo",
-      "notes": "Estilo 'baggy' con múltiples bolsillos funcionales. Tela resistente, color verde militar.",
-      "id": "j84s"
+      "notes": "Estilo 'baggy' con múltiples bolsillos funcionales. Tela resistente, color verde militar."
     },
     {
       "id": "zxk8",
@@ -54,5 +45,6 @@
       "cut": "Slim",
       "notes": "Tiro medio. Ideal para ocasiones formales. Requiere limpieza en seco."
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

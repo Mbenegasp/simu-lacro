@@ -3,7 +3,6 @@ import { inject } from '@angular/core';
 import { PantalonService } from '../../services/pantalon-service';
 import { Router } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { Pantalon } from '../../models/pantalon';
 
 @Component({
   selector: 'app-catalogo',
