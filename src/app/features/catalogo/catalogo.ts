@@ -12,7 +12,7 @@ import { Pantalon } from '../../models/pantalon';
   styleUrl: './catalogo.css',
 })
 export class Catalogo {
-  private readonly pantalonService = inject(PantalonService)
+  private readonly pantalonService = inject(PantalonService);
   private readonly router = inject(Router);
 
   protected readonly pantalones = toSignal(this.pantalonService.getAll(), {

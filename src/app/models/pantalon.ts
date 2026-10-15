@@ -1,11 +1,11 @@
 export const SIZES = ['XS', 'S', 'M', 'L', 'XL'] as const;
 export type Size = (typeof SIZES)[number];
 
-export const CUTS = ['Recto', 'Slim', 'Jogger', 'Cargo', 'Skinny'] as const;
+export const CUTS = ['Recto', 'Slim', 'Jogger', 'Cargo', 'Skinny', 'Oxford'] as const;
 export type Cut = (typeof CUTS)[number];
 
 export interface Pantalon {
-  id: string;
+  id: string | number;
   modelName: string;
   salePrice: number;
   isInStore: boolean;
@@ -15,7 +15,7 @@ export interface Pantalon {
 }
 
 export interface PantalonFormulario {
-  modelName: string;
+  modelName: string | number;
   salePrice: number;
   isInStore: boolean;
   size: Size;
