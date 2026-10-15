@@ -44,6 +44,15 @@
       "size": "S",
       "cut": "Slim",
       "notes": "Tiro medio. Ideal para ocasiones formales. Requiere limpieza en seco."
+    },
+    {
+      "modelName": "lindo",
+      "salePrice": 56,
+      "isInStore": false,
+      "cut": "Jogger",
+      "size": "S",
+      "notes": "muy facherito cha cha",
+      "id": "kPhyNiO3xxQ"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

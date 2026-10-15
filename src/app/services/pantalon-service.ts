@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { Pantalon } from '../models/pantalon';
+import { Pantalon, PantalonFormulario } from '../models/pantalon';
 
 @Injectable({
   providedIn: 'root',
@@ -17,7 +17,7 @@ export class PantalonService {
     return this.http.get<Pantalon>(`${this.url}/${id}`);
   }
 
-  add(pantalon: Pantalon){
+  add(pantalon: PantalonFormulario){
     return this.http.post<Pantalon>(this.url, pantalon);
   }
 
